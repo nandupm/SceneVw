@@ -28,6 +28,20 @@ android {
     }
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.nandupm'
+                artifactId = 'sceneform_test'
+                version = '1.0.0'
+            }
+        }
+    }
+}
+
 dependencies {
 
     //api project(":core")
